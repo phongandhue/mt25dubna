@@ -1174,6 +1174,20 @@ G4BlockingList.icc
 
 /home/phong/geant4install/include/Geant4/G4BlockingList.icc
 
+/home/phong/geant4install/include/Geant4/G4BooleanSolid.hh
+G4DisplacedSolid.hh
+/home/phong/geant4install/include/Geant4/G4DisplacedSolid.hh
+G4ThreeVector.hh
+/home/phong/geant4install/include/Geant4/G4ThreeVector.hh
+G4RotationMatrix.hh
+/home/phong/geant4install/include/Geant4/G4RotationMatrix.hh
+G4Transform3D.hh
+/home/phong/geant4install/include/Geant4/G4Transform3D.hh
+G4BooleanSolid.icc
+/home/phong/geant4install/include/Geant4/G4BooleanSolid.icc
+
+/home/phong/geant4install/include/Geant4/G4BooleanSolid.icc
+
 /home/phong/geant4install/include/Geant4/G4BoundingEnvelope.hh
 vector
 -
@@ -1270,6 +1284,12 @@ G4ParticleDefinition.hh
 
 /home/phong/geant4install/include/Geant4/G4ClassificationOfNewTrack.hh
 
+/home/phong/geant4install/include/Geant4/G4CollectionNameVector.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
+vector
+-
+
 /home/phong/geant4install/include/Geant4/G4CollisionInitialState.hh
 G4KineticTrack.hh
 /home/phong/geant4install/include/Geant4/G4KineticTrack.hh
@@ -1291,22 +1311,6 @@ iostream
 -
 map
 -
-
-/home/phong/geant4install/include/Geant4/G4Cons.hh
-G4GeomTypes.hh
-/home/phong/geant4install/include/Geant4/G4GeomTypes.hh
-G4UCons.hh
-/home/phong/geant4install/include/Geant4/G4UCons.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/phong/geant4install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-G4Cons.icc
-/home/phong/geant4install/include/Geant4/G4Cons.icc
-
-/home/phong/geant4install/include/Geant4/G4Cons.icc
 
 /home/phong/geant4install/include/Geant4/G4CrossSectionDataStore.hh
 globals.hh
@@ -1461,6 +1465,18 @@ G4VModelFactory.hh
 /home/phong/geant4install/include/Geant4/G4VModelFactory.hh
 G4VDigi.hh
 /home/phong/geant4install/include/Geant4/G4VDigi.hh
+
+/home/phong/geant4install/include/Geant4/G4DisplacedSolid.hh
+G4VSolid.hh
+/home/phong/geant4install/include/Geant4/G4VSolid.hh
+G4RotationMatrix.hh
+/home/phong/geant4install/include/Geant4/G4RotationMatrix.hh
+G4ThreeVector.hh
+/home/phong/geant4install/include/Geant4/G4ThreeVector.hh
+G4Transform3D.hh
+/home/phong/geant4install/include/Geant4/G4Transform3D.hh
+G4AffineTransform.hh
+/home/phong/geant4install/include/Geant4/G4AffineTransform.hh
 
 /home/phong/geant4install/include/Geant4/G4DsMesonMinus.hh
 globals.hh
@@ -2210,6 +2226,14 @@ G4AutoLock.hh
 G4GeomConfig.hh
 /home/phong/geant4install/include/Geant4/G4GeomConfig.hh
 
+/home/phong/geant4install/include/Geant4/G4GeometryManager.hh
+vector
+-
+G4Types.hh
+/home/phong/geant4install/include/Geant4/G4Types.hh
+G4SmartVoxelStat.hh
+/home/phong/geant4install/include/Geant4/G4SmartVoxelStat.hh
+
 /home/phong/geant4install/include/Geant4/G4GlobalConfig.hh
 
 /home/phong/geant4install/include/Geant4/G4GraphicsSystemList.hh
@@ -2275,6 +2299,12 @@ G4Allocator.hh
 /home/phong/geant4install/include/Geant4/G4Allocator.hh
 G4VHitsCollection.hh
 /home/phong/geant4install/include/Geant4/G4VHitsCollection.hh
+vector
+-
+
+/home/phong/geant4install/include/Geant4/G4HCtable.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
 vector
 -
 
@@ -3040,6 +3070,24 @@ G4ModelingParameters.icc
 
 /home/phong/geant4install/include/Geant4/G4ModelingParameters.icc
 
+/home/phong/geant4install/include/Geant4/G4MultiFunctionalDetector.hh
+G4VSensitiveDetector.hh
+/home/phong/geant4install/include/Geant4/G4VSensitiveDetector.hh
+G4VHit.hh
+/home/phong/geant4install/include/Geant4/G4VHit.hh
+G4Step.hh
+/home/phong/geant4install/include/Geant4/G4Step.hh
+G4HCofThisEvent.hh
+/home/phong/geant4install/include/Geant4/G4HCofThisEvent.hh
+G4VReadOutGeometry.hh
+/home/phong/geant4install/include/Geant4/G4VReadOutGeometry.hh
+G4TouchableHistory.hh
+/home/phong/geant4install/include/Geant4/G4TouchableHistory.hh
+G4CollectionNameVector.hh
+/home/phong/geant4install/include/Geant4/G4CollectionNameVector.hh
+vector
+-
+
 /home/phong/geant4install/include/Geant4/G4MuonMinus.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -3494,22 +3542,6 @@ G4ios.hh
 G4ParticleDefinition.hh
 /home/phong/geant4install/include/Geant4/G4ParticleDefinition.hh
 
-/home/phong/geant4install/include/Geant4/G4Orb.hh
-G4GeomTypes.hh
-/home/phong/geant4install/include/Geant4/G4GeomTypes.hh
-G4UOrb.hh
-/home/phong/geant4install/include/Geant4/G4UOrb.hh
-CLHEP/Units/PhysicalConstants.h
--
-G4CSGSolid.hh
-/home/phong/geant4install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-G4Orb.icc
-/home/phong/geant4install/include/Geant4/G4Orb.icc
-
-/home/phong/geant4install/include/Geant4/G4Orb.icc
-
 /home/phong/geant4install/include/Geant4/G4OrderedTable.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -3561,6 +3593,18 @@ pwdefs.hh
 /home/phong/geant4install/include/Geant4/pwdefs.hh
 G4AutoLock.hh
 /home/phong/geant4install/include/Geant4/G4AutoLock.hh
+
+/home/phong/geant4install/include/Geant4/G4PSDoseDeposit.hh
+G4VPrimitiveScorer.hh
+/home/phong/geant4install/include/Geant4/G4VPrimitiveScorer.hh
+G4THitsMap.hh
+/home/phong/geant4install/include/Geant4/G4THitsMap.hh
+
+/home/phong/geant4install/include/Geant4/G4PSEnergyDeposit.hh
+G4VPrimitiveScorer.hh
+/home/phong/geant4install/include/Geant4/G4VPrimitiveScorer.hh
+G4THitsMap.hh
+/home/phong/geant4install/include/Geant4/G4THitsMap.hh
 
 /home/phong/geant4install/include/Geant4/G4PVPlacement.hh
 G4VPhysicalVolume.hh
@@ -5432,6 +5476,14 @@ vector
 map
 -
 
+/home/phong/geant4install/include/Geant4/G4PhysicalVolumeStore.hh
+vector
+-
+G4VPhysicalVolume.hh
+/home/phong/geant4install/include/Geant4/G4VPhysicalVolume.hh
+G4VStoreNotifier.hh
+/home/phong/geant4install/include/Geant4/G4VStoreNotifier.hh
+
 /home/phong/geant4install/include/Geant4/G4PhysicsBuilderInterface.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -6124,6 +6176,26 @@ globals.hh
 G4EventManager.hh
 /home/phong/geant4install/include/Geant4/G4EventManager.hh
 
+/home/phong/geant4install/include/Geant4/G4SDManager.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
+G4SDStructure.hh
+/home/phong/geant4install/include/Geant4/G4SDStructure.hh
+G4HCtable.hh
+/home/phong/geant4install/include/Geant4/G4HCtable.hh
+G4VSDFilter.hh
+/home/phong/geant4install/include/Geant4/G4VSDFilter.hh
+vector
+-
+
+/home/phong/geant4install/include/Geant4/G4SDStructure.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
+G4VSensitiveDetector.hh
+/home/phong/geant4install/include/Geant4/G4VSensitiveDetector.hh
+vector
+-
+
 /home/phong/geant4install/include/Geant4/G4SPBaryon.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -6292,6 +6364,14 @@ G4Scene.hh
 vector
 -
 
+/home/phong/geant4install/include/Geant4/G4SensitiveVolumeList.hh
+vector
+-
+G4LogicalVolume.hh
+/home/phong/geant4install/include/Geant4/G4LogicalVolume.hh
+G4VPhysicalVolume.hh
+/home/phong/geant4install/include/Geant4/G4VPhysicalVolume.hh
+
 /home/phong/geant4install/include/Geant4/G4ShiftedGaussian.hh
 utility
 -
@@ -6452,6 +6532,10 @@ G4SmartVoxelProxy.icc
 
 /home/phong/geant4install/include/Geant4/G4SmartVoxelProxy.icc
 
+/home/phong/geant4install/include/Geant4/G4SmartVoxelStat.hh
+G4Types.hh
+/home/phong/geant4install/include/Geant4/G4Types.hh
+
 /home/phong/geant4install/include/Geant4/G4SoftStringBuilder.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -6462,21 +6546,13 @@ G4ExcitedStringVector.hh
 G4PartonPair.hh
 /home/phong/geant4install/include/Geant4/G4PartonPair.hh
 
-/home/phong/geant4install/include/Geant4/G4Sphere.hh
-G4GeomTypes.hh
-/home/phong/geant4install/include/Geant4/G4GeomTypes.hh
-G4USphere.hh
-/home/phong/geant4install/include/Geant4/G4USphere.hh
-CLHEP/Units/PhysicalConstants.h
+/home/phong/geant4install/include/Geant4/G4SolidStore.hh
+vector
 -
-G4CSGSolid.hh
-/home/phong/geant4install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-G4Sphere.icc
-/home/phong/geant4install/include/Geant4/G4Sphere.icc
-
-/home/phong/geant4install/include/Geant4/G4Sphere.icc
+G4VSolid.hh
+/home/phong/geant4install/include/Geant4/G4VSolid.hh
+G4VStoreNotifier.hh
+/home/phong/geant4install/include/Geant4/G4VStoreNotifier.hh
 
 /home/phong/geant4install/include/Geant4/G4StableIsotopes.hh
 globals.hh
@@ -6631,6 +6707,20 @@ G4VHighEnergyGenerator.hh
 /home/phong/geant4install/include/Geant4/G4VHighEnergyGenerator.hh
 G4KineticTrackVector.hh
 /home/phong/geant4install/include/Geant4/G4KineticTrackVector.hh
+
+/home/phong/geant4install/include/Geant4/G4SubtractionSolid.hh
+G4BooleanSolid.hh
+/home/phong/geant4install/include/Geant4/G4BooleanSolid.hh
+G4VSolid.hh
+/home/phong/geant4install/include/Geant4/G4VSolid.hh
+G4RotationMatrix.hh
+/home/phong/geant4install/include/Geant4/G4RotationMatrix.hh
+G4ThreeVector.hh
+/home/phong/geant4install/include/Geant4/G4ThreeVector.hh
+G4Transform3D.hh
+/home/phong/geant4install/include/Geant4/G4Transform3D.hh
+G4AffineTransform.hh
+/home/phong/geant4install/include/Geant4/G4AffineTransform.hh
 
 /home/phong/geant4install/include/Geant4/G4SystemOfUnits.hh
 CLHEP/Units/SystemOfUnits.h
@@ -7022,20 +7112,6 @@ globals.hh
 CLHEP/Geometry/Transform3D.h
 -
 
-/home/phong/geant4install/include/Geant4/G4Trd.hh
-G4GeomTypes.hh
-/home/phong/geant4install/include/Geant4/G4GeomTypes.hh
-G4UTrd.hh
-/home/phong/geant4install/include/Geant4/G4UTrd.hh
-G4CSGSolid.hh
-/home/phong/geant4install/include/Geant4/G4CSGSolid.hh
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-G4Trd.icc
-/home/phong/geant4install/include/Geant4/G4Trd.icc
-
-/home/phong/geant4install/include/Geant4/G4Trd.icc
-
 /home/phong/geant4install/include/Geant4/G4Triton.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -7104,14 +7180,6 @@ volumes/UnplacedBox.h
 G4Polyhedron.hh
 /home/phong/geant4install/include/Geant4/G4Polyhedron.hh
 
-/home/phong/geant4install/include/Geant4/G4UCons.hh
-G4UAdapter.hh
-/home/phong/geant4install/include/Geant4/G4UAdapter.hh
-volumes/UnplacedCone.h
--
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-
 /home/phong/geant4install/include/Geant4/G4UIExecutive.hh
 G4VUIshell.hh
 /home/phong/geant4install/include/Geant4/G4VUIshell.hh
@@ -7170,30 +7238,6 @@ G4UItokenNum.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
 
-/home/phong/geant4install/include/Geant4/G4UOrb.hh
-G4UAdapter.hh
-/home/phong/geant4install/include/Geant4/G4UAdapter.hh
-volumes/UnplacedOrb.h
--
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-
-/home/phong/geant4install/include/Geant4/G4USphere.hh
-G4UAdapter.hh
-/home/phong/geant4install/include/Geant4/G4UAdapter.hh
-volumes/UnplacedSphere.h
--
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-
-/home/phong/geant4install/include/Geant4/G4UTrd.hh
-G4UAdapter.hh
-/home/phong/geant4install/include/Geant4/G4UAdapter.hh
-volumes/UnplacedTrd.h
--
-G4Polyhedron.hh
-/home/phong/geant4install/include/Geant4/G4Polyhedron.hh
-
 /home/phong/geant4install/include/Geant4/G4UTubs.hh
 G4UAdapter.hh
 /home/phong/geant4install/include/Geant4/G4UAdapter.hh
@@ -7201,6 +7245,20 @@ volumes/UnplacedTube.h
 -
 G4Polyhedron.hh
 /home/phong/geant4install/include/Geant4/G4Polyhedron.hh
+
+/home/phong/geant4install/include/Geant4/G4UnionSolid.hh
+G4BooleanSolid.hh
+/home/phong/geant4install/include/Geant4/G4BooleanSolid.hh
+G4VSolid.hh
+/home/phong/geant4install/include/Geant4/G4VSolid.hh
+G4RotationMatrix.hh
+/home/phong/geant4install/include/Geant4/G4RotationMatrix.hh
+G4ThreeVector.hh
+/home/phong/geant4install/include/Geant4/G4ThreeVector.hh
+G4Transform3D.hh
+/home/phong/geant4install/include/Geant4/G4Transform3D.hh
+G4AffineTransform.hh
+/home/phong/geant4install/include/Geant4/G4AffineTransform.hh
 
 /home/phong/geant4install/include/Geant4/G4UnitsTable.hh
 globals.hh
@@ -7778,6 +7836,14 @@ G4ReactionProduct.hh
 G4ThreeVector.hh
 /home/phong/geant4install/include/Geant4/G4ThreeVector.hh
 
+/home/phong/geant4install/include/Geant4/G4VPrimitiveScorer.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
+G4VSDFilter.hh
+/home/phong/geant4install/include/Geant4/G4VSDFilter.hh
+G4MultiFunctionalDetector.hh
+/home/phong/geant4install/include/Geant4/G4MultiFunctionalDetector.hh
+
 /home/phong/geant4install/include/Geant4/G4VProcess.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -7820,6 +7886,14 @@ globals.hh
 vector
 -
 
+/home/phong/geant4install/include/Geant4/G4VReadOutGeometry.hh
+G4SensitiveVolumeList.hh
+/home/phong/geant4install/include/Geant4/G4SensitiveVolumeList.hh
+G4Step.hh
+/home/phong/geant4install/include/Geant4/G4Step.hh
+G4TouchableHistory.hh
+/home/phong/geant4install/include/Geant4/G4TouchableHistory.hh
+
 /home/phong/geant4install/include/Geant4/G4VRestDiscreteProcess.hh
 globals.hh
 /home/phong/geant4install/include/Geant4/globals.hh
@@ -7827,6 +7901,10 @@ G4ios.hh
 /home/phong/geant4install/include/Geant4/G4ios.hh
 G4VProcess.hh
 /home/phong/geant4install/include/Geant4/G4VProcess.hh
+
+/home/phong/geant4install/include/Geant4/G4VSDFilter.hh
+globals.hh
+/home/phong/geant4install/include/Geant4/globals.hh
 
 /home/phong/geant4install/include/Geant4/G4VScatterer.hh
 vector
@@ -7851,6 +7929,22 @@ G4VSceneHandler.icc
 /home/phong/geant4install/include/Geant4/G4VSceneHandler.icc
 
 /home/phong/geant4install/include/Geant4/G4VSceneHandler.icc
+
+/home/phong/geant4install/include/Geant4/G4VSensitiveDetector.hh
+G4VHit.hh
+/home/phong/geant4install/include/Geant4/G4VHit.hh
+G4Step.hh
+/home/phong/geant4install/include/Geant4/G4Step.hh
+G4HCofThisEvent.hh
+/home/phong/geant4install/include/Geant4/G4HCofThisEvent.hh
+G4VReadOutGeometry.hh
+/home/phong/geant4install/include/Geant4/G4VReadOutGeometry.hh
+G4TouchableHistory.hh
+/home/phong/geant4install/include/Geant4/G4TouchableHistory.hh
+G4CollectionNameVector.hh
+/home/phong/geant4install/include/Geant4/G4CollectionNameVector.hh
+G4VSDFilter.hh
+/home/phong/geant4install/include/Geant4/G4VSDFilter.hh
 
 /home/phong/geant4install/include/Geant4/G4VSolid.hh
 G4Types.hh
@@ -9317,26 +9411,44 @@ G4NistManager.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4NistManager.hh
 G4Box.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4Box.hh
-G4Cons.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4Cons.hh
-G4Orb.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4Orb.hh
-G4Sphere.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4Sphere.hh
 G4Tubs.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4Tubs.hh
-G4Trd.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4Trd.hh
 G4LogicalVolume.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4LogicalVolume.hh
 G4PVPlacement.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4PVPlacement.hh
-G4SystemOfUnits.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4SystemOfUnits.hh
-G4PhysicalConstants.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PhysicalConstants.hh
+G4RotationMatrix.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4RotationMatrix.hh
+G4Transform3D.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4Transform3D.hh
+G4SDManager.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4SDManager.hh
+G4MultiFunctionalDetector.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4MultiFunctionalDetector.hh
+G4VPrimitiveScorer.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4VPrimitiveScorer.hh
+G4PSEnergyDeposit.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PSEnergyDeposit.hh
+G4PSDoseDeposit.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PSDoseDeposit.hh
 G4VisAttributes.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4VisAttributes.hh
+G4PhysicalConstants.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PhysicalConstants.hh
+G4SystemOfUnits.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4SystemOfUnits.hh
+G4SubtractionSolid.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4SubtractionSolid.hh
+G4GeometryManager.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4GeometryManager.hh
+G4PhysicalVolumeStore.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PhysicalVolumeStore.hh
+G4LogicalVolumeStore.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4LogicalVolumeStore.hh
+G4SolidStore.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4SolidStore.hh
+G4UnionSolid.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4UnionSolid.hh
 
 /home/phong/mophong/mt25dubna/bremtalys251020/src/B1EventAction.cc
 B1EventAction.hh

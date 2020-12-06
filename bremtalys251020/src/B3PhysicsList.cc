@@ -74,7 +74,7 @@ B3PhysicsList::B3PhysicsList()
 
   // Ion Inelastic Physics
   RegisterPhysics( new G4IonPhysicsXS());
-  ////RegisterPhysics( new G4IonINCLXXPhysics());
+  //RegisterPhysics( new G4IonINCLXXPhysics());
 
   // stopping Particles
   ////RegisterPhysics( new G4StoppingPhysics(verb));
@@ -88,13 +88,13 @@ B3PhysicsList::B3PhysicsList()
   ////RegisterPhysics( new G4HadronInelasticQBBC());
   ////RegisterPhysics( new G4HadronPhysicsINCLXX());
 
-  RegisterPhysics(new G4IonBinaryCascadePhysics());
+  //RegisterPhysics(new G4IonBinaryCascadePhysics());
 
   // Gamma-Nuclear Physics
   RegisterPhysics( new GammaNuclearPhysics("gamma"));
 
   // Neutron HP Physics
-   RegisterPhysics( new NeutronHPphysics("neutronHP"));
+  RegisterPhysics( new NeutronHPphysics("neutronHP"));
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

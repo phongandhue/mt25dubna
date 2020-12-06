@@ -608,18 +608,20 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4AuxiliaryNavServices.icc
  /home/phong/geant4install/include/Geant4/G4BlockingList.hh
  /home/phong/geant4install/include/Geant4/G4BlockingList.icc
+ /home/phong/geant4install/include/Geant4/G4BooleanSolid.hh
+ /home/phong/geant4install/include/Geant4/G4BooleanSolid.icc
  /home/phong/geant4install/include/Geant4/G4BoundingEnvelope.hh
  /home/phong/geant4install/include/Geant4/G4Box.hh
  /home/phong/geant4install/include/Geant4/G4Box.icc
  /home/phong/geant4install/include/Geant4/G4CSGSolid.hh
  /home/phong/geant4install/include/Geant4/G4ClassificationOfNewTrack.hh
+ /home/phong/geant4install/include/Geant4/G4CollectionNameVector.hh
  /home/phong/geant4install/include/Geant4/G4Color.hh
  /home/phong/geant4install/include/Geant4/G4Colour.hh
- /home/phong/geant4install/include/Geant4/G4Cons.hh
- /home/phong/geant4install/include/Geant4/G4Cons.icc
  /home/phong/geant4install/include/Geant4/G4DCofThisEvent.hh
  /home/phong/geant4install/include/Geant4/G4DataVector.hh
  /home/phong/geant4install/include/Geant4/G4DataVector.icc
+ /home/phong/geant4install/include/Geant4/G4DisplacedSolid.hh
  /home/phong/geant4install/include/Geant4/G4DynamicParticle.hh
  /home/phong/geant4install/include/Geant4/G4DynamicParticle.icc
  /home/phong/geant4install/include/Geant4/G4ElectronOccupancy.hh
@@ -642,8 +644,10 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4GeomConfig.hh
  /home/phong/geant4install/include/Geant4/G4GeomSplitter.hh
  /home/phong/geant4install/include/Geant4/G4GeomTypes.hh
+ /home/phong/geant4install/include/Geant4/G4GeometryManager.hh
  /home/phong/geant4install/include/Geant4/G4GlobalConfig.hh
  /home/phong/geant4install/include/Geant4/G4HCofThisEvent.hh
+ /home/phong/geant4install/include/Geant4/G4HCtable.hh
  /home/phong/geant4install/include/Geant4/G4ICRU90StoppingData.hh
  /home/phong/geant4install/include/Geant4/G4IonisParamElm.hh
  /home/phong/geant4install/include/Geant4/G4IonisParamMat.hh
@@ -653,6 +657,7 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4Log.hh
  /home/phong/geant4install/include/Geant4/G4LogicalVolume.hh
  /home/phong/geant4install/include/Geant4/G4LogicalVolume.icc
+ /home/phong/geant4install/include/Geant4/G4LogicalVolumeStore.hh
  /home/phong/geant4install/include/Geant4/G4LorentzVector.hh
  /home/phong/geant4install/include/Geant4/G4Material.hh
  /home/phong/geant4install/include/Geant4/G4MaterialPropertiesIndex.hh
@@ -660,6 +665,7 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4MaterialPropertiesTable.icc
  /home/phong/geant4install/include/Geant4/G4MaterialPropertyVector.hh
  /home/phong/geant4install/include/Geant4/G4MaterialTable.hh
+ /home/phong/geant4install/include/Geant4/G4MultiFunctionalDetector.hh
  /home/phong/geant4install/include/Geant4/G4NavigationHistory.hh
  /home/phong/geant4install/include/Geant4/G4NavigationHistory.icc
  /home/phong/geant4install/include/Geant4/G4NavigationHistoryPool.hh
@@ -676,10 +682,10 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4Normal3D.hh
  /home/phong/geant4install/include/Geant4/G4NormalNavigation.hh
  /home/phong/geant4install/include/Geant4/G4NormalNavigation.icc
- /home/phong/geant4install/include/Geant4/G4Orb.hh
- /home/phong/geant4install/include/Geant4/G4Orb.icc
  /home/phong/geant4install/include/Geant4/G4OrderedTable.hh
  /home/phong/geant4install/include/Geant4/G4PDefManager.hh
+ /home/phong/geant4install/include/Geant4/G4PSDoseDeposit.hh
+ /home/phong/geant4install/include/Geant4/G4PSEnergyDeposit.hh
  /home/phong/geant4install/include/Geant4/G4PVPlacement.hh
  /home/phong/geant4install/include/Geant4/G4ParameterisedNavigation.hh
  /home/phong/geant4install/include/Geant4/G4ParameterisedNavigation.icc
@@ -692,6 +698,7 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4ParticleTable.icc
  /home/phong/geant4install/include/Geant4/G4ParticleTableIterator.hh
  /home/phong/geant4install/include/Geant4/G4PhysicalConstants.hh
+ /home/phong/geant4install/include/Geant4/G4PhysicalVolumeStore.hh
  /home/phong/geant4install/include/Geant4/G4PhysicsFreeVector.hh
  /home/phong/geant4install/include/Geant4/G4PhysicsModelCatalog.hh
  /home/phong/geant4install/include/Geant4/G4PhysicsOrderedFreeVector.hh
@@ -721,7 +728,10 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4RotationMatrix.hh
  /home/phong/geant4install/include/Geant4/G4RunManager.hh
  /home/phong/geant4install/include/Geant4/G4RunManagerKernel.hh
+ /home/phong/geant4install/include/Geant4/G4SDManager.hh
+ /home/phong/geant4install/include/Geant4/G4SDStructure.hh
  /home/phong/geant4install/include/Geant4/G4SandiaTable.hh
+ /home/phong/geant4install/include/Geant4/G4SensitiveVolumeList.hh
  /home/phong/geant4install/include/Geant4/G4SmartTrackStack.hh
  /home/phong/geant4install/include/Geant4/G4SmartVoxelHeader.hh
  /home/phong/geant4install/include/Geant4/G4SmartVoxelHeader.icc
@@ -729,8 +739,8 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4SmartVoxelNode.icc
  /home/phong/geant4install/include/Geant4/G4SmartVoxelProxy.hh
  /home/phong/geant4install/include/Geant4/G4SmartVoxelProxy.icc
- /home/phong/geant4install/include/Geant4/G4Sphere.hh
- /home/phong/geant4install/include/Geant4/G4Sphere.icc
+ /home/phong/geant4install/include/Geant4/G4SmartVoxelStat.hh
+ /home/phong/geant4install/include/Geant4/G4SolidStore.hh
  /home/phong/geant4install/include/Geant4/G4StackManager.hh
  /home/phong/geant4install/include/Geant4/G4StackedTrack.hh
  /home/phong/geant4install/include/Geant4/G4Step.hh
@@ -742,7 +752,10 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4SteppingManager.hh
  /home/phong/geant4install/include/Geant4/G4String.hh
  /home/phong/geant4install/include/Geant4/G4String.icc
+ /home/phong/geant4install/include/Geant4/G4SubtractionSolid.hh
  /home/phong/geant4install/include/Geant4/G4SystemOfUnits.hh
+ /home/phong/geant4install/include/Geant4/G4THitsCollection.hh
+ /home/phong/geant4install/include/Geant4/G4THitsMap.hh
  /home/phong/geant4install/include/Geant4/G4Threading.hh
  /home/phong/geant4install/include/Geant4/G4ThreeVector.hh
  /home/phong/geant4install/include/Geant4/G4TouchableHandle.hh
@@ -759,23 +772,18 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4TrackingMessenger.hh
  /home/phong/geant4install/include/Geant4/G4TrajectoryContainer.hh
  /home/phong/geant4install/include/Geant4/G4Transform3D.hh
- /home/phong/geant4install/include/Geant4/G4Trd.hh
- /home/phong/geant4install/include/Geant4/G4Trd.icc
  /home/phong/geant4install/include/Geant4/G4Tubs.hh
  /home/phong/geant4install/include/Geant4/G4Tubs.icc
  /home/phong/geant4install/include/Geant4/G4Types.hh
  /home/phong/geant4install/include/Geant4/G4UAdapter.hh
  /home/phong/geant4install/include/Geant4/G4UBox.hh
- /home/phong/geant4install/include/Geant4/G4UCons.hh
  /home/phong/geant4install/include/Geant4/G4UIcommand.hh
  /home/phong/geant4install/include/Geant4/G4UIdirectory.hh
  /home/phong/geant4install/include/Geant4/G4UImessenger.hh
  /home/phong/geant4install/include/Geant4/G4UIparameter.hh
  /home/phong/geant4install/include/Geant4/G4UItokenNum.hh
- /home/phong/geant4install/include/Geant4/G4UOrb.hh
- /home/phong/geant4install/include/Geant4/G4USphere.hh
- /home/phong/geant4install/include/Geant4/G4UTrd.hh
  /home/phong/geant4install/include/Geant4/G4UTubs.hh
+ /home/phong/geant4install/include/Geant4/G4UnionSolid.hh
  /home/phong/geant4install/include/Geant4/G4UserStackingAction.hh
  /home/phong/geant4install/include/Geant4/G4UserSteppingAction.hh
  /home/phong/geant4install/include/Geant4/G4UserTrackingAction.hh
@@ -783,16 +791,23 @@ CMakeFiles/exampleB1.dir/src/B1DetectorConstruction.cc.o
  /home/phong/geant4install/include/Geant4/G4VExceptionHandler.hh
  /home/phong/geant4install/include/Geant4/G4VExternalNavigation.hh
  /home/phong/geant4install/include/Geant4/G4VGraphicsScene.hh
+ /home/phong/geant4install/include/Geant4/G4VHit.hh
  /home/phong/geant4install/include/Geant4/G4VHitsCollection.hh
+ /home/phong/geant4install/include/Geant4/G4VNotifier.hh
  /home/phong/geant4install/include/Geant4/G4VPVParameterisation.hh
  /home/phong/geant4install/include/Geant4/G4VParticleChange.hh
  /home/phong/geant4install/include/Geant4/G4VParticleChange.icc
  /home/phong/geant4install/include/Geant4/G4VPhysicalVolume.hh
  /home/phong/geant4install/include/Geant4/G4VPhysicalVolume.icc
+ /home/phong/geant4install/include/Geant4/G4VPrimitiveScorer.hh
  /home/phong/geant4install/include/Geant4/G4VProcess.hh
+ /home/phong/geant4install/include/Geant4/G4VReadOutGeometry.hh
+ /home/phong/geant4install/include/Geant4/G4VSDFilter.hh
+ /home/phong/geant4install/include/Geant4/G4VSensitiveDetector.hh
  /home/phong/geant4install/include/Geant4/G4VSolid.hh
  /home/phong/geant4install/include/Geant4/G4VSolid.icc
  /home/phong/geant4install/include/Geant4/G4VSteppingVerbose.hh
+ /home/phong/geant4install/include/Geant4/G4VStoreNotifier.hh
  /home/phong/geant4install/include/Geant4/G4VTouchable.hh
  /home/phong/geant4install/include/Geant4/G4VTouchable.icc
  /home/phong/geant4install/include/Geant4/G4VTrajectory.hh
