@@ -65,12 +65,15 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
   // get volume of the current step
   G4LogicalVolume* volume 
     = step->GetPreStepPoint()->GetTouchableHandle()
-      ->GetVolume()->GetLogicalVolume();
+      ->GetVolume()->GetLogicalVolume();//prestep on Primary target
 
-  if (volume->GetName()!="PrimaryTarget") return;
+  if (volume->GetName()!="SecondaryTarget") return;//!only primary target
+
   G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
  //if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&preE>0){
-  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"&&preE>0){
+  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
+          //&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"
+          &&preE>0){
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
       analysisManager->FillNtupleDColumn(0,0,preE);
       analysisManager->AddNtupleRow(0);

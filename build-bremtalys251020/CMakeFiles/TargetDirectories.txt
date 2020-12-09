@@ -1,8 +1,0 @@
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/install/local.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/install/strip.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/B1.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/install.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/exampleB1.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/rebuild_cache.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/edit_cache.dir
-/home/phong/mophong/mt25dubna/build-bremtalys251020/CMakeFiles/list_install_components.dir
