@@ -16,15 +16,15 @@
 /gps/pos/radius 1. mm
 /gps/pos/sigma_r 0. mm
 
-/gps/ang/rot1 1 0 0
-/gps/ang/rot2 0 1 0
-/gps/ang/type beam1d
+/gps/ang/rot1 -1 0 0
+/gps/ang/rot2 0 -1 0
+/gps/ang/type beam2d
 /gps/ang/sigma_r 0. deg
 
 #
 # the beam energy is in gaussian profile centered at 400 MeV
 /gps/ene/type Gauss
-/gps/ene/mono 15 MeV
+/gps/ene/mono 25 MeV
 /gps/ene/sigma 0.03 MeV
 
 #
@@ -35,5 +35,4 @@
 /run/printProgress 10000
 #
 #/tracking/verbose 1
-
 
