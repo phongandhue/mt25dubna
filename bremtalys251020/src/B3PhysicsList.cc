@@ -36,6 +36,7 @@
 #include "G4EmPenelopePhysics.hh"
 #include "G4DecayPhysics.hh"
 #include "G4HadronElasticPhysics.hh"
+#include "G4HadronElasticPhysicsHP.hh"
 #include "G4HadronInelasticQBBC.hh"
 #include "G4IonBinaryCascadePhysics.hh"
 #include "G4Decay.hh"
@@ -44,6 +45,7 @@
 #include "G4HadronPhysicsFTFP_BERT_HP.hh"
 #include "G4HadronPhysicsQGSP_BIC_HP.hh"
 #include "G4HadronPhysicsINCLXX.hh"
+#include "G4IonElasticPhysics.hh"
 #include "G4IonElasticPhysics.hh"
 #include "G4IonPhysicsXS.hh"
 #include "G4IonINCLXXPhysics.hh"
@@ -77,16 +79,16 @@ B3PhysicsList::B3PhysicsList()
   //RegisterPhysics( new G4IonINCLXXPhysics());
 
   // stopping Particles
-  ////RegisterPhysics( new G4StoppingPhysics(verb));
+  RegisterPhysics( new G4StoppingPhysics(0));
 
 
-  // Hadron models
-  RegisterPhysics(new G4HadronElasticPhysics());
+  // Hadron models (with high precision neutron)
+  RegisterPhysics(new G4HadronElasticPhysicsHP());
 
-  //RegisterPhysics( new G4HadronPhysicsFTFP_BERT_HP());
-  RegisterPhysics( new G4HadronPhysicsQGSP_BIC_HP());
-  ////RegisterPhysics( new G4HadronInelasticQBBC());
-  ////RegisterPhysics( new G4HadronPhysicsINCLXX());
+  RegisterPhysics( new G4HadronPhysicsFTFP_BERT_HP());
+  //RegisterPhysics( new G4HadronPhysicsQGSP_BIC_HP());
+  //RegisterPhysics( new G4HadronInelasticQBBC());
+  //RegisterPhysics( new G4HadronPhysicsINCLXX());
 
   //RegisterPhysics(new G4IonBinaryCascadePhysics());
 
@@ -94,7 +96,7 @@ B3PhysicsList::B3PhysicsList()
   RegisterPhysics( new GammaNuclearPhysics("gamma"));
 
   // Neutron HP Physics
-  RegisterPhysics( new NeutronHPphysics("neutronHP"));
+  //RegisterPhysics( new NeutronHPphysics("neutronHP"));
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

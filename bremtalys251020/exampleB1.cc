@@ -29,6 +29,7 @@
 
 #include "B1DetectorConstruction.hh"
 #include "B1ActionInitialization.hh"
+#include "Shielding.hh"
 
 #ifdef G4MULTITHREADED
 #include "G4MTRunManager.hh"
@@ -68,8 +69,9 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new B1DetectorConstruction());
 
   // Physics list
-  runManager->SetUserInitialization(new B3PhysicsList);
-    
+  //runManager->SetUserInitialization(new B3PhysicsList);
+  runManager->SetUserInitialization(new Shielding);
+
   // User action initialization
   runManager->SetUserInitialization(new B1ActionInitialization());
   

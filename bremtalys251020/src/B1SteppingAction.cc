@@ -69,7 +69,7 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
 
   if (volume->GetName()!="Sample_0") return;
 
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
+  G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
  //if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&preE>0){
   if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
           //&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"

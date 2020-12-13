@@ -54,6 +54,7 @@
 #include "G4NeutronHPCaptureData.hh"
 #include "G4NeutronHPCapture.hh"
 
+#include "G4HadronElastic.hh"
 #include "G4HadronFissionProcess.hh"
 #include "G4NeutronHPFissionData.hh"
 #include "G4NeutronHPFission.hh"
@@ -90,15 +91,18 @@ void NeutronHPphysics::ConstructProcess()
    G4NeutronHPElasticData* dataSet1a = new G4NeutronHPElasticData();
    G4NeutronHPThermalScatteringData* dataSet1b
                                = new G4NeutronHPThermalScatteringData();
+
    process1->AddDataSet(dataSet1a);
    process1->AddDataSet(dataSet1b);
+
    //
    // models
    G4NeutronHPElastic*           model1a = new G4NeutronHPElastic();
    G4NeutronHPThermalScattering* model1b = new G4NeutronHPThermalScattering();
+
    model1a->SetMinEnergy(4*eV);
    process1->RegisterMe(model1a);
-     model1b->SetMaxEnergy(4*eV);
+   model1b->SetMaxEnergy(4*eV);
    process1->RegisterMe(model1b);
 
    // process: inelastic
@@ -106,9 +110,10 @@ void NeutronHPphysics::ConstructProcess()
    G4NeutronInelasticProcess* process2 = new G4NeutronInelasticProcess();
    pManager->AddDiscreteProcess(process2);
    //
-   // cross section data set
+   // cross section data sets
    G4NeutronHPInelasticData* dataSet2 = new G4NeutronHPInelasticData();
    process2->AddDataSet(dataSet2);
+
    //
    // models
    G4NeutronHPInelastic* model2 = new G4NeutronHPInelastic();

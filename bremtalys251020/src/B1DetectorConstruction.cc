@@ -193,18 +193,18 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4Material* UTar_mat = nist->FindOrBuildMaterial("G4_U");
 
   G4Tubs* solidUTar =
-    new G4Tubs("BeamPipe",                    //its name
+    new G4Tubs("UraniumTarget",                    //its name
         0, UTar_sizeR,UTar_sizeZ/2,0,twopi); //its size
 
   G4LogicalVolume* logicUTar =
           new G4LogicalVolume(solidUTar,          //its solid
                               UTar_mat,           //its material
-                              "BeriliumChamber");            //its name
+                              "UraniumTarget");            //its name
 
   //G4PVPlacement* physUTar =
   new G4PVPlacement(0,                       //no rotation
                     G4ThreeVector(0,0,0),         //at (0,0,0)
-                    "BeriliumChamberPV",              //its name
+                    "UraniumTargetPV",              //its name
                     logicUTar,                //its logical volume
                     physBeC,              //its mother  volume
                     false,                   //no boolean operation
