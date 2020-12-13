@@ -44,6 +44,7 @@
 #include "G4UIExecutive.hh"
 
 #include "Randomize.hh"
+#include "ShieldingMod.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
