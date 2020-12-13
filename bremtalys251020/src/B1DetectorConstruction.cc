@@ -190,7 +190,26 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   // Uranium Target
   G4double UTar_sizeR = 1*cm;
   G4double UTar_sizeZ  = 1.*cm;
+  //G4Material* UTar_mat = nist->FindOrBuildMaterial("G4_U");
   G4Material* UTar_mat = nist->FindOrBuildMaterial("G4_U");
+  G4double* isoi=UTar_mat->GetElement(0)->GetRelativeAbundanceVector();
+  size_t niso=UTar_mat->GetElement(0)->GetNumberOfIsotopes();
+  G4cout<<"NIST NATURAL URANIUM"<<G4endl;
+  for (G4int i=0;i<niso;i++)
+  {
+
+      G4cout<<UTar_mat->GetElement(0)->GetIsotope(i)->GetName()<<" - fraction = "<<isoi[i]<<G4endl;
+  }
+
+/*
+  G4Isotope* U5 = new G4Isotope("U235", 92, 235, 235.01*g/mole);
+  G4Isotope* U8 = new G4Isotope("U238", 92, 238, 238.03*g/mole);
+  G4Element* U  = new G4Element("natural Uranium", "U", 2);
+  U->AddIsotope(U5,  0.7255 *perCent);
+  U->AddIsotope(U8,  99.2745*perCent);
+  G4Material* U_noU234 = new G4Material("Uranium", 18.95*g/cm3, 1);
+  U_noU234->AddElement(U, 1);
+*/
 
   G4Tubs* solidUTar =
     new G4Tubs("UraniumTarget",                    //its name

@@ -96,7 +96,7 @@ B3PhysicsList::B3PhysicsList()
   RegisterPhysics( new GammaNuclearPhysics("gamma"));
 
   // Neutron HP Physics
-  //RegisterPhysics( new NeutronHPphysics("neutronHP"));
+  RegisterPhysics( new NeutronHPphysics("neutronHP"));
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
