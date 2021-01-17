@@ -5540,28 +5540,6 @@ G4Parton.hh
 vector
 -
 
-/home/phong/geant4install/include/Geant4/G4PhotoNuclearCrossSection.hh
-G4VCrossSectionDataSet.hh
-/home/phong/geant4install/include/Geant4/G4VCrossSectionDataSet.hh
-G4DynamicParticle.hh
-/home/phong/geant4install/include/Geant4/G4DynamicParticle.hh
-G4Element.hh
-/home/phong/geant4install/include/Geant4/G4Element.hh
-G4ParticleTable.hh
-/home/phong/geant4install/include/Geant4/G4ParticleTable.hh
-G4NucleiProperties.hh
-/home/phong/geant4install/include/Geant4/G4NucleiProperties.hh
-G4NistManager.hh
-/home/phong/geant4install/include/Geant4/G4NistManager.hh
-vector
--
-
-/home/phong/geant4install/include/Geant4/G4PhotoNuclearProcess.hh
-G4HadronInelasticProcess.hh
-/home/phong/geant4install/include/Geant4/G4HadronInelasticProcess.hh
-G4PhotoNuclearCrossSection.hh
-/home/phong/geant4install/include/Geant4/G4PhotoNuclearCrossSection.hh
-
 /home/phong/geant4install/include/Geant4/G4PhysicalConstants.hh
 CLHEP/Units/PhysicalConstants.h
 -
@@ -9510,6 +9488,28 @@ globals.hh
 G4VPhysicsConstructor.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/include/G4VPhysicsConstructor.hh
 
+/home/phong/mophong/mt25dubna/bremtalys251020/include/MyPhotoNuclearCrossSection.hh
+G4VCrossSectionDataSet.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4VCrossSectionDataSet.hh
+G4DynamicParticle.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4DynamicParticle.hh
+G4Element.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4Element.hh
+G4ParticleTable.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4ParticleTable.hh
+G4NucleiProperties.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4NucleiProperties.hh
+G4NistManager.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4NistManager.hh
+vector
+-
+
+/home/phong/mophong/mt25dubna/bremtalys251020/include/MyPhotoNuclearProcess.hh
+G4HadronInelasticProcess.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/G4HadronInelasticProcess.hh
+MyPhotoNuclearCrossSection.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/include/MyPhotoNuclearCrossSection.hh
+
 /home/phong/mophong/mt25dubna/bremtalys251020/include/NeutronHPphysics.hh
 globals.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/include/globals.hh
@@ -9693,8 +9693,8 @@ G4ParticleDefinition.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4ParticleDefinition.hh
 G4ProcessManager.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4ProcessManager.hh
-G4PhotoNuclearProcess.hh
-/home/phong/mophong/mt25dubna/bremtalys251020/src/G4PhotoNuclearProcess.hh
+MyPhotoNuclearProcess.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/MyPhotoNuclearProcess.hh
 G4CascadeInterface.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4CascadeInterface.hh
 G4SystemOfUnits.hh
@@ -9791,4 +9791,6 @@ G4HadronicParameters.hh
 /home/phong/mophong/mt25dubna/bremtalys251020/src/G4HadronicParameters.hh
 CLHEP/Units/SystemOfUnits.h
 -
+G4EmLivermorePhysics.hh
+/home/phong/mophong/mt25dubna/bremtalys251020/src/G4EmLivermorePhysics.hh
 

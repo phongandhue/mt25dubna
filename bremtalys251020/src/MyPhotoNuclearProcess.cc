@@ -23,49 +23,15 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file GammaNuclearPhysics.cc
-/// \brief Implementation of the GammaNuclearPhysics class
 //
-//
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-#include "GammaNuclearPhysics.hh"
-
-#include "G4ParticleDefinition.hh"
-#include "G4ProcessManager.hh"
-
-// Processes
 
 #include "MyPhotoNuclearProcess.hh"
-#include "G4CascadeInterface.hh"
+#include <iostream>
 
-#include "G4SystemOfUnits.hh"
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GammaNuclearPhysics::GammaNuclearPhysics(const G4String& name)
-:  G4VPhysicsConstructor(name)
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GammaNuclearPhysics::~GammaNuclearPhysics()
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void GammaNuclearPhysics::ConstructProcess()
+void G4PhotoNuclearProcess::ProcessDescription(std::ostream& outFile) const
 {
-   G4ProcessManager* pManager = G4Gamma::Gamma()->GetProcessManager();
-   //
-   G4PhotoNuclearProcess* process = new G4PhotoNuclearProcess();
-   //
-   G4CascadeInterface* bertini = new G4CascadeInterface();
-   bertini->SetMaxEnergy(10*GeV);
-   process->RegisterMe(bertini);
-   //
-   pManager->AddDiscreteProcess(process);
+  outFile << "G4PhotoNuclearProcess handles inelastic photon scattering from\n" 
+          << "nuclei by invoking one or more hadronic models and one\n"
+          << "or more hadronic cross section sets.\n";
 }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

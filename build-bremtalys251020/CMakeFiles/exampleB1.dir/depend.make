@@ -2864,8 +2864,6 @@ CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4ParticleTable.icc
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4ParticleTableIterator.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4ParticleTypes.hh
-CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4PhotoNuclearCrossSection.hh
-CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4PhotoNuclearProcess.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4PhysicsFreeVector.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4PhysicsListHelper.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/G4PhysicsListOrderingParameter.hh
@@ -2961,6 +2959,8 @@ CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/tls.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/geant4install/include/Geant4/trkdefs.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/mophong/mt25dubna/bremtalys251020/include/GammaNuclearPhysics.hh
+CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/mophong/mt25dubna/bremtalys251020/include/MyPhotoNuclearCrossSection.hh
+CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/mophong/mt25dubna/bremtalys251020/include/MyPhotoNuclearProcess.hh
 CMakeFiles/exampleB1.dir/src/GammaNuclearPhysics.cc.o: /home/phong/mophong/mt25dubna/bremtalys251020/src/GammaNuclearPhysics.cc
 
 CMakeFiles/exampleB1.dir/src/NeutronHPphysics.cc.o: /home/phong/geant4install/include/Geant4/CLHEP/Random/DualRand.h
@@ -3676,6 +3676,7 @@ CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/includ
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4ElementTable.hh
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4ElementVector.hh
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4EmExtraPhysics.hh
+CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4EmLivermorePhysics.hh
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4EmMessenger.hh
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4EmParameters.hh
 CMakeFiles/exampleB1.dir/src/ShieldingMod.cc.o: /home/phong/geant4install/include/Geant4/G4EmParticleList.hh

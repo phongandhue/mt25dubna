@@ -23,49 +23,38 @@
 // * acceptance of all terms of the Geant4 Software license.          *
 // ********************************************************************
 //
-/// \file GammaNuclearPhysics.cc
-/// \brief Implementation of the GammaNuclearPhysics class
 //
+// Class Description
+// Process for photon nuclear inelastic scattering; 
+// to be used in your physics list in case you need this physics.
 //
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+// Hadronic Process: Ion Inelastic Process
+// J.P. Wellisch, CERN, Apr. 14 2000
+// Last modified: 03-Apr-1997
 
-#include "GammaNuclearPhysics.hh"
+#ifndef G4PhotoNuclearProcess_h
+#define G4PhotoNuclearProcess_h 1
+ 
+#include "G4HadronInelasticProcess.hh"
+#include "MyPhotoNuclearCrossSection.hh"
 
-#include "G4ParticleDefinition.hh"
-#include "G4ProcessManager.hh"
 
-// Processes
-
-#include "MyPhotoNuclearProcess.hh"
-#include "G4CascadeInterface.hh"
-
-#include "G4SystemOfUnits.hh"
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GammaNuclearPhysics::GammaNuclearPhysics(const G4String& name)
-:  G4VPhysicsConstructor(name)
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-GammaNuclearPhysics::~GammaNuclearPhysics()
-{ }
-
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
-
-void GammaNuclearPhysics::ConstructProcess()
+class G4PhotoNuclearProcess : public G4HadronInelasticProcess
 {
-   G4ProcessManager* pManager = G4Gamma::Gamma()->GetProcessManager();
-   //
-   G4PhotoNuclearProcess* process = new G4PhotoNuclearProcess();
-   //
-   G4CascadeInterface* bertini = new G4CascadeInterface();
-   bertini->SetMaxEnergy(10*GeV);
-   process->RegisterMe(bertini);
-   //
-   pManager->AddDiscreteProcess(process);
-}
+  public:
+    
+    G4PhotoNuclearProcess(const G4String& processName = "photonNuclear")
+      : G4HadronInelasticProcess(processName, G4Gamma::Gamma() )
+    {
+      G4CrossSectionDataStore* theStore = GetCrossSectionDataStore();
+      theStore->AddDataSet(new G4PhotoNuclearCrossSection);
+    }
 
-//....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
+  ~G4PhotoNuclearProcess() {}
+
+  virtual void ProcessDescription(std::ostream& outFile) const;
+};
+
+#endif
+
