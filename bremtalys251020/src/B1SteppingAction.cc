@@ -74,6 +74,7 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
   if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
           //&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"
           &&preE>0){
+      //G4cout<<"EEE "<<preE<<G4endl;
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
       analysisManager->FillNtupleDColumn(0,0,preE);
       analysisManager->AddNtupleRow(0);

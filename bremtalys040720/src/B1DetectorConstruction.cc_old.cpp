@@ -42,11 +42,6 @@
 #include "G4SystemOfUnits.hh"
 #include "G4PhysicalConstants.hh"
 #include "G4VisAttributes.hh"
-#include "G4RotationMatrix.hh"
-#include "G4UnionSolid.hh"
-#include "G4SubtractionSolid.hh"
-#include "G4IntersectionSolid.hh"
-
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -115,7 +110,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                         primTar_mat,             //its material
                         "PrimaryTarget");         //its name
 
-  G4double primTarZpos=primTar_sizeZ/2*mm;
+  G4double primTarZpos=0*mm;
   new G4PVPlacement(0,                       //no rotation
                     G4ThreeVector(0,0,primTarZpos),         //at (0,0,0)
                     logicPrimTar,                //its logical volume
@@ -124,11 +119,40 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
+  //
+/*  // Nhom
+  //
+  G4double nhom_sizeR = 50.*mm;
+  G4double nhom_sizeZ  = 20.*mm;
+//  G4Box* nhom =
+//    new G4Box("Nhom",                    //its name
+//        0.5*nhom_sizeXY, 0.5*nhom_sizeXY, 0.5*nhom_sizeZ); //its size
 
+  G4Tubs* nhom =
+    new G4Tubs("Nhom",                    //its name
+        0, nhom_sizeR,nhom_sizeZ/2,0,twopi); //its size
+
+  G4Material* nhom_mat = nist->FindOrBuildMaterial("G4_Al");
+
+  G4LogicalVolume* logicNhom =
+    new G4LogicalVolume(nhom,            //its solid
+                        nhom_mat,             //its material
+                        "Nhom");         //its name
+  //G4double disNhom = 0.*cm;
+  G4double nhomZpos=nhom_sizeZ/2. + primTar_sizeZ/2.;
+  new G4PVPlacement(0,                       //no rotation
+                    G4ThreeVector(0,0,nhomZpos),         //at (0,0,0)
+                    logicNhom,                //its logical volume
+                    "Nhom",              //its name
+                    logicWorld,              //its mother  volume
+                    false,                   //no boolean operation
+                    0,                       //copy number
+                    checkOverlaps);          //overlaps checking
+ */
  // Nuoc
   //
-  G4double nuoc_sizeR = 120.*mm;
-  G4double nuoc_sizeZ  = 280.*mm;
+  G4double nuoc_sizeR = 20.*mm;
+  G4double nuoc_sizeZ  = 15.*mm;
 //  G4Box* nuoc =
 //    new G4Box("Nuoc",                    //its name
 //        0.5*nuoc_sizeXY, 0.5*nuoc_sizeXY, 0.5*nuoc_sizeZ); //its size
@@ -139,33 +163,23 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
 
   G4Material* nuoc_mat = nist->FindOrBuildMaterial("G4_WATER");
 
-  G4double beampipe_sizeR = 98./2.*mm; G4double beampipe_sizeZ = nuoc_sizeR;
-  G4Tubs* beampipe =
-    new G4Tubs("beampipe",                    //its name
-        0, beampipe_sizeR,beampipe_sizeZ/2,0,twopi); //its size
-
-  G4RotationMatrix* rotmat_beampipe=new G4RotationMatrix;
-  rotmat_beampipe->set(0,0,0);
-  rotmat_beampipe->rotateX(90.*deg);
-  G4SubtractionSolid* nuoc_sub= new G4SubtractionSolid("nuoc-beampipe",nuoc,beampipe,rotmat_beampipe,G4ThreeVector(0,-nuoc_sizeR/2,0));
 
   G4LogicalVolume* logicNuoc =
-    new G4LogicalVolume(nuoc_sub,            //its solid
+    new G4LogicalVolume(nuoc,            //its solid
                         nuoc_mat,             //its material
                         "Nuoc");         //its name
+  //G4double disNhom = 0.*cm;
 
-
-  G4RotationMatrix* rotmat_nuoc=new G4RotationMatrix;
-  rotmat_nuoc->set(0,0,0);
-  rotmat_nuoc->rotateX(90.*deg);
-  new G4PVPlacement(rotmat_nuoc,                       //no rotation
-                    G4ThreeVector(0,0,0),         //at (0,0,0)
-                    "NuocPHY",              //its name
+  G4double nuocZpos=nuoc_sizeZ/2. +primTar_sizeZ/2.;
+  new G4PVPlacement(0,                       //no rotation
+                    G4ThreeVector(0,0,nuocZpos),         //at (0,0,0)
                     logicNuoc,                //its logical volume
-                    physWorld,              //its mother  volume
+                    "Nuoc",              //its name
+                    logicWorld,              //its mother  volume
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
+
 
   //
   // bia thu cap
@@ -203,16 +217,12 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                         Eu153,             //its material
                         "SecondaryTarget");         //its name
   //G4double distanceSecTar=3.*cm;
-  G4double secTarZpos=20*mm;
-  G4RotationMatrix* rotmat_SecTar=new G4RotationMatrix;
-  rotmat_SecTar->set(0,0,0);
-  rotmat_SecTar->rotateX(90.*deg);
-
-  new G4PVPlacement(rotmat_SecTar,                       //no rotation
-                    G4ThreeVector(0,secTarZpos,0),         //at (0,0,0)
+  G4double secTarZpos=primTar_sizeZ/2+nuoc_sizeZ+secTar_sizeZ/2.;
+  new G4PVPlacement(0,                       //no rotation
+                    G4ThreeVector(0,0,secTarZpos),         //at (0,0,0)
                     logicSecTar,                //its logical volume
                     "SecondaryTarget",              //its name
-                    logicNuoc,              //its mother  volume
+                    logicWorld,              //its mother  volume
                     false,                   //no boolean operation
                     0,                       //copy number
                     checkOverlaps);          //overlaps checking
@@ -226,12 +236,12 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   //
 
 
-
-
   G4VisAttributes* Red=
     new G4VisAttributes(G4Colour(1.0,0.0,0.0,0.3));  // Red
     Red->SetVisibility(true);
     Red->SetForceSolid(true);
+
+
 
   G4VisAttributes* Green=
     new G4VisAttributes(G4Colour(0.0,1.0,0.0,0.2));  // Green
@@ -242,7 +252,6 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
     new G4VisAttributes(G4Colour(0.0,0.0,1.0,0.1));  // Blue
     Blue->SetVisibility(true);
     Blue->SetForceSolid(true);
-    //Blue->SetForceWireframe(true);
 
   G4VisAttributes* Yellow=
     new G4VisAttributes(G4Colour(1.0,1.0,0.0,0.3));  // Yellow

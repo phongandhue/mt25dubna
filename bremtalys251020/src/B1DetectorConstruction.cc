@@ -243,6 +243,9 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
 
   G4double Sample_R_out = 25.*cm;
   G4double Sample_R_in = 24.*cm;
+  //Sample_R_out -= 24.*cm;
+  //Sample_R_in -= 24.*cm;
+
   G4double Sample_Z = 1.5*cm;
   G4Tubs* solidSample[N_CHAMBER];
   G4LogicalVolume* logicSample[N_CHAMBER];
