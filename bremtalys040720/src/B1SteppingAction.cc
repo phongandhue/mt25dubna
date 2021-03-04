@@ -35,6 +35,7 @@
 #include "G4Event.hh"
 #include "G4RunManager.hh"
 #include "G4LogicalVolume.hh"
+#include "G4SystemOfUnits.hh"
 
 #include "g4root.hh"
 
@@ -67,26 +68,28 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
     = step->GetPreStepPoint()->GetTouchableHandle()
       ->GetVolume()->GetLogicalVolume();
 
-  if (volume->GetName()!="PrimaryTarget") return;
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
- //if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&preE>0){
-  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"&&preE>0){
-      G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,0,preE);
-      analysisManager->AddNtupleRow(0);
-  }
+//  if (volume->GetName()!="PrimaryTarget") return;
+//  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
+// //if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&preE>0){
+//  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"&&preE>0){
+//      G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
+//      analysisManager->FillNtupleDColumn(0,0,preE);
+//      analysisManager->AddNtupleRow(0);
+//  }
+  G4String volumeName= volume->GetName();
+  if (volumeName.substr(0,15) != "SecondaryTarget") return;
+  G4int volumenum=atoi((volumeName.substr(16,volumeName.length()-15)).c_str());
 
-  /*
-  // check if we are in scoring volume
-  if (volume != fScoringVolume) return;
-
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
-  if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="gamma"&&preE>0){
+  G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
+  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
+          &&preE>0){
+      G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,0,preE);
-      analysisManager->AddNtupleRow(0);
+      analysisManager->FillNtupleDColumn(0,volumenum);
+      analysisManager->FillNtupleDColumn(1,preE);
+      analysisManager->AddNtupleRow();
+
   }
-  */
 
   // collect energy deposited in this step
   G4double edepStep = step->GetTotalEnergyDeposit();

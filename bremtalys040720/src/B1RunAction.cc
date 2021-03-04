@@ -67,8 +67,9 @@ B1RunAction::B1RunAction()
 
   G4AnalysisManager* analysisManager=G4AnalysisManager::Instance();
   analysisManager->CreateNtuple("BremSpec","step Inform");
+  analysisManager->CreateNtupleDColumn("id");
   analysisManager->CreateNtupleDColumn("E");
-  analysisManager->FinishNtuple(0);
+  analysisManager->FinishNtuple();
 
 }
 

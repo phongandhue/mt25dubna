@@ -189,38 +189,50 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   Eu153->AddElement(elEu,1);
   //G4Material* tar_mat=Eumat;
 
+  //! Ag
+  G4Material *AuNist = nist->FindOrBuildMaterial("G4_Au");
   G4double secTar_sizeR = 10.*mm;
-  G4double secTar_sizeZ  = 0.05*mm;
-//  G4Box* secTar =
-//    new G4Box("SecondaryTarget",                    //its name
-//        0.5*secTar_sizeXY, 0.5*secTar_sizeXY, 0.5*secTar_sizeZ); //its size
-  G4Tubs* secTar =
-    new G4Tubs("SecondaryTarget",                    //its name
-        0, secTar_sizeR,secTar_sizeZ/2,0,twopi); //its size
-
-  G4LogicalVolume* logicSecTar =
-    new G4LogicalVolume(secTar,            //its solid
-                        Eu153,             //its material
-                        "SecondaryTarget");         //its name
+  G4double secTar_sizeZ  = 2*mm;
   //G4double distanceSecTar=3.*cm;
-  G4double secTarZpos=20*mm;
-  G4RotationMatrix* rotmat_SecTar=new G4RotationMatrix;
-  rotmat_SecTar->set(0,0,0);
-  rotmat_SecTar->rotateX(90.*deg);
+  G4double secTarZpos=15.*mm;
 
-  new G4PVPlacement(rotmat_SecTar,                       //no rotation
-                    G4ThreeVector(0,secTarZpos,0),         //at (0,0,0)
-                    logicSecTar,                //its logical volume
-                    "SecondaryTarget",              //its name
-                    logicNuoc,              //its mother  volume
-                    false,                   //no boolean operation
-                    0,                       //copy number
-                    checkOverlaps);          //overlaps checking
+  G4double secTar_posX[]={26.14*mm, 49.59*mm, 16.04*mm, -24.64*mm, -48.99*mm, -34.45*mm, 0.2875*mm, 50.78*mm};
+  G4double secTar_posZ[]={44.4*mm, 15.61*mm, 12.25*mm, 45.94*mm, 17.16*mm, -39.2*mm, -51.45*mm, -13.79*mm};
+
+  G4int N_SecTar=8;
+  G4Tubs* secTar[N_SecTar];
+  G4LogicalVolume* logicSecTar[N_SecTar];
+  for (G4int i=0;i<N_SecTar;i++){
+      char tmp[50];
+      sprintf(tmp,"_%d",i);
+      G4String tmpid=(G4String) tmp;
+
+      secTar[i] = new G4Tubs("SecondaryTargetSolid"+tmpid,                    //its name
+                 0, secTar_sizeR,secTar_sizeZ/2,0,twopi); //its size
+      logicSecTar[i] =
+        new G4LogicalVolume(secTar[i],            //its solid
+                            AuNist,             //its material
+                            "SecondaryTarget"+tmpid);        //its name
+      G4RotationMatrix* rotmat_SecTar=new G4RotationMatrix;
+      rotmat_SecTar->set(0,0,0);
+      rotmat_SecTar->rotateX(90.*deg);
+
+      new G4PVPlacement(rotmat_SecTar,                       //no rotation
+                        G4ThreeVector(secTar_posX[i],secTarZpos,secTar_posZ[i]),         //at (0,0,0)
+                        logicSecTar[i],                //its logical volume
+                        "SecondaryTargetP"+tmpid,              //its name
+                        logicNuoc,              //its mother  volume
+                        false,                   //no boolean operation
+                        0,                       //copy number
+                        checkOverlaps);          //overlaps checking
+  }
+
+
 
 
   // Set Shape2 as scoring volume
   //
-  fScoringVolume = logicSecTar;
+  fScoringVolume = logicSecTar[0];
 
   // Visualization attributes
   //
@@ -271,7 +283,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
 
   logicNuoc->SetVisAttributes (Blue);
 
-  logicSecTar->SetVisAttributes (Yellow);
+  for (G4int i=0;i<N_SecTar;i++) logicSecTar[i]->SetVisAttributes (Yellow);
 
   //
   //always return the physical World
