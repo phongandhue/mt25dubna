@@ -83,7 +83,7 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
   G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
   if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
           &&preE>0){
-      G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
+      //G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
       analysisManager->FillNtupleDColumn(0,volumenum);
       analysisManager->FillNtupleDColumn(1,preE);

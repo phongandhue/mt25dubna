@@ -55,6 +55,7 @@
 
 
 #define N_CHAMBER 4
+#define N_SAMPLE 6
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -241,16 +242,17 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4VPhysicalVolume* physSC[N_CHAMBER];
   G4double SC_posY[]={-30*cm,-15*cm,15*cm,30*cm};
 
-  G4double Sample_R_out = 25.*cm;
-  G4double Sample_R_in = 24.*cm;
+  G4double Sample_R_out = 0.5*cm;
+  G4double Sample_R_in = 0.*cm;
   //Sample_R_out -= 24.*cm;
   //Sample_R_in -= 24.*cm;
 
   G4double Sample_Z = 1.5*cm;
-  G4Tubs* solidSample[N_CHAMBER];
-  G4LogicalVolume* logicSample[N_CHAMBER];
-  G4double Sample_posY[]={-30*cm,-15*cm,15*cm,30*cm};
-  G4int Sample_placement[]={1,0,0,0};
+  G4Tubs* solidSample[N_SAMPLE];
+  G4LogicalVolume* logicSample[N_SAMPLE];
+
+  G4double Sample_posZpos[]={0*cm, 4.5*cm, 9.5*cm,14.5*cm,19.5*cm, 24.5*cm};
+
   G4Material* Sample_mat = nist->FindOrBuildMaterial("G4_Cd");
 
 
@@ -266,7 +268,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
       logicSC[i] =
               new G4LogicalVolume(solidSC[i],          //its solid
                                   SC_mat,           //its material
-                                  "SampleChamber"+tmpid);            //its name
+                                  "SSSSampleChamber"+tmpid);            //its name
       physSC[i] = new G4PVPlacement(0,                       //no rotation
                         G4ThreeVector(0,SC_posY[i],0),         //at (0,0,0)
                         "SampleChamberPV"+tmpid,              //its name
@@ -275,25 +277,28 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                         false,                   //no boolean operation
                         0,                       //copy number
                         checkOverlaps);          //overlaps checking
-
-      solidSample[i] =
+  }
+  for (G4int j=0;j<N_SAMPLE;j++){
+      char tmp[50];
+      sprintf(tmp,"_%d",j);
+      G4String tmpid=(G4String) tmp;
+      solidSample[j] =
               new G4Tubs("SampleSolid"+tmpid,                       //its name
                          Sample_R_in, Sample_R_out,Sample_Z/2,0,twopi);     //its size
-      logicSample[i] =
-              new G4LogicalVolume(solidSample[i],          //its solid
-                                  Sample_mat,           //its material
-                                  "Sample"+tmpid);            //its name
-      G4RotationMatrix* rotM = new G4RotationMatrix;
-      rotM->rotateX(90.*deg);
-      if (Sample_placement[i]==1)
-      new G4PVPlacement(rotM,                       //no rotation
-                        G4ThreeVector(0,0,0),         //at (0,0,0)
-                        "SamplePV"+tmpid,              //its name
-                        logicSample[i],                //its logical volume
-                        physSC[i],              //its mother  volume
-                        false,                   //no boolean operation
-                        0,                       //copy number
-                        checkOverlaps);          //overlaps checking
+              logicSample[j] =
+                      new G4LogicalVolume(solidSample[j],          //its solid
+                                          Sample_mat,           //its material
+                                          "Sample"+tmpid);            //its name
+              G4RotationMatrix* rotM = new G4RotationMatrix;
+              rotM->rotateX(90.*deg);
+              new G4PVPlacement(rotM,                       //no rotation
+                                G4ThreeVector(0,0,-Sample_posZpos[j]),         //at (0,0,0)
+                                "SamplePV"+tmpid,              //its name
+                                logicSample[j],                //its logical volume
+                                physSC[0],              //its mother  volume
+                                false,                   //no boolean operation
+                                0,                       //copy number
+                                checkOverlaps);          //overlaps checking
   }
 
   //

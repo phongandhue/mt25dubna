@@ -70,7 +70,6 @@ B1RunAction::B1RunAction()
   analysisManager->CreateNtupleDColumn("id");
   analysisManager->CreateNtupleDColumn("E");
   analysisManager->FinishNtuple();
-
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

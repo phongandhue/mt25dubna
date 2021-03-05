@@ -48,6 +48,7 @@ set(EXAMPLEB1_SCRIPTS
   vis.mac
   disableqt.sh
   chain.C
+  addhisto.sh
   )
 
 foreach(_script ${EXAMPLEB1_SCRIPTS})

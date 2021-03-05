@@ -24,7 +24,7 @@
 #
 # the beam energy is in gaussian profile centered at 400 MeV
 /gps/ene/type Gauss
-/gps/ene/mono 15 MeV
+/gps/ene/mono 25 MeV
 /gps/ene/sigma 0.03 MeV
 
 #

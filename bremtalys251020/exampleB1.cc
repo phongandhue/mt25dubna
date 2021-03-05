@@ -44,8 +44,8 @@
 #include "G4UIExecutive.hh"
 
 #include "Randomize.hh"
-#include "ShieldingMod.hh"
-
+//#include "ShieldingMod.hh"
+#include "Shielding.hh"
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
 int main(int argc,char** argv)

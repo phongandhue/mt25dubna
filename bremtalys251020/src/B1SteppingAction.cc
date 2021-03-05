@@ -67,17 +67,18 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
     = step->GetPreStepPoint()->GetTouchableHandle()
       ->GetVolume()->GetLogicalVolume();//prestep on Primary target
 
-  if (volume->GetName()!="Sample_0") return;
+  G4String volumeName= volume->GetName();
+  if (volumeName.substr(0,6) != "Sample") return;
+  G4int volumenum=atoi((volumeName.substr(7,volumeName.length()-6)).c_str());
 
   G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
- //if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"&&preE>0){
   if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
-          //&&step->GetTrack()->GetCreatorProcess()->GetProcessName()=="photonNuclear"
           &&preE>0){
-      //G4cout<<"EEE "<<preE<<G4endl;
+      G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,0,preE);
-      analysisManager->AddNtupleRow(0);
+      analysisManager->FillNtupleDColumn(0,volumenum);
+      analysisManager->FillNtupleDColumn(1,preE);
+      analysisManager->AddNtupleRow();
   }
 
   /*
