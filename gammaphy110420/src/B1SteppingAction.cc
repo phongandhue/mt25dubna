@@ -36,6 +36,8 @@
 #include "G4RunManager.hh"
 #include "G4LogicalVolume.hh"
 #include "G4SystemOfUnits.hh"
+
+#include "G4HadronicProcess.hh"
 #include "g4root.hh"
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
@@ -68,34 +70,81 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
       ->GetVolume()->GetLogicalVolume();//prestep on Primary target
 
   G4String volumeName= volume->GetName();
-  if (volumeName.substr(0,6) != "Sample") return;
-  G4int volumenum=atoi((volumeName.substr(7,volumeName.length()-6)).c_str());
 
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
-  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
-          &&preE>0){
-      //G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
-      G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,volumenum);
-      analysisManager->FillNtupleDColumn(1,preE);
-      analysisManager->AddNtupleRow();
+  // get reactions channels
+  const G4StepPoint* endPoint = step->GetPostStepPoint();
+  G4VProcess* process   =
+                   const_cast<G4VProcess*>(endPoint->GetProcessDefinedStep());
+
+  // check that an real interaction occured (eg. not a transportation)
+  G4StepStatus stepStatus = endPoint->GetStepStatus();
+  G4bool transmit = (stepStatus==fGeomBoundary || stepStatus==fWorldBoundary);
+  if (transmit) return;
+
+  //initialisation of the nuclear channel identification
+  //
+  G4ParticleDefinition* particle = step->GetTrack()->GetDefinition();
+  G4String partName = particle->GetParticleName();
+
+
+  G4String nuclearChannel = process->GetProcessName()+" - ";
+  nuclearChannel += partName;
+
+  if (partName!="gamma")
+      return;
+
+  G4HadronicProcess* hproc = dynamic_cast<G4HadronicProcess*>(process);
+
+  const G4Isotope* target = NULL;
+  if (hproc) {
+      target = hproc->GetTargetIsotope();
+  }else{
+      return;
   }
 
-  /*
-  // check if we are in scoring volume
-  if (volume != fScoringVolume) return;
+  G4String targetName = "XXXX";
+  if (target) targetName = target->GetName();
+  nuclearChannel += " + " + targetName + " --> ";
 
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
-  if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="gamma"&&preE>0){
-      G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,0,preE);
-      analysisManager->AddNtupleRow(0);
+  //scattered primary particle (if any)
+  //
+  G4int ih = 1;
+  if (step->GetTrack()->GetTrackStatus() == fAlive) {
+    nuclearChannel += partName + " + ";
   }
-  */
 
-  // collect energy deposited in this step
-  G4double edepStep = step->GetTotalEnergyDeposit();
-  fEventAction->AddEdep(edepStep);  
+  //secondaries
+  //
+  const std::vector<const G4Track*>* secondary
+                                    = step->GetSecondaryInCurrentStep();
+
+  G4cout<<"nuclear channel = "<<nuclearChannel;
+  for (size_t lp=0; lp<(*secondary).size(); lp++) {
+    particle = (*secondary)[lp]->GetDefinition();
+    G4String name   = particle->GetParticleName();
+    G4String type   = particle->GetParticleType();
+    G4double energy = (*secondary)[lp]->GetKineticEnergy();
+    //energy spectrum
+    ih = 0;
+         if (particle == G4Gamma::Gamma())       ih = 2;
+    else if (particle == G4Neutron::Neutron())   ih = 3;
+    else if (particle == G4Proton::Proton())     ih = 4;
+    else if (particle == G4Deuteron::Deuteron()) ih = 5;
+    else if (particle == G4Alpha::Alpha())       ih = 6;
+    else if (type == "nucleus")                  ih = 7;
+    else if (type == "meson")                    ih = 8;
+    else if (type == "baryon")                   ih = 9;
+    //atomic mass
+    if (type == "nucleus") {
+      G4int A = particle->GetAtomicMass();
+    }
+    if (particle == G4Electron::Electron()) particle = G4Gamma::Gamma();
+    //particle flag
+    fParticleFlag[particle]++;
+    G4cout<<name<<" + ";
+  }
+  G4cout<<G4endl;
+
 }
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......

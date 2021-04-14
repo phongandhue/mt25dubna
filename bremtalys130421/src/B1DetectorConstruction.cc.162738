@@ -55,8 +55,7 @@
 
 
 #define N_CHAMBER 4
-#define N_SAMPLE 121*3
-#define N_SAMPLE_ONE 121
+#define N_SAMPLE 7
 
 //....oooOO0OOooo........oooOO0OOooo........oooOO0OOooo........oooOO0OOooo......
 
@@ -252,8 +251,7 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
   G4Tubs* solidSample[N_SAMPLE];
   G4LogicalVolume* logicSample[N_SAMPLE];
 
-  G4double Sample_posXpos[]={-24*cm,-19*cm,-14*cm, -9*cm, -4*cm,0*cm, 4*cm, 9*cm,14*cm,19*cm, 24*cm};
-  G4double Sample_posZpos[]={-24*cm,-19*cm,-14*cm, -9*cm, -4*cm,0*cm, 4*cm, 9*cm,14*cm,19*cm, 24*cm};
+  G4double Sample_posZpos[]={0*cm, 4*cm, 9*cm,14*cm,19*cm, 24*cm};
 
   G4Material* Sample_mat = nist->FindOrBuildMaterial("G4_Cd");
 
@@ -281,67 +279,28 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
                         checkOverlaps);          //overlaps checking
   }
 
-  G4int nn = N_SAMPLE_ONE;
-  G4int n = (G4int) sqrt(N_SAMPLE_ONE);
-
-
-  G4int nchamberwsample = 3;
-  G4int chamberids[] ={0,2,3};
-  for (G4int i=0;i<nchamberwsample;i++){
-      for (G4int k=0;k<nn;k++){
-          G4int j = i*N_SAMPLE_ONE+k;
-          G4int xx = k/n;
-          G4int zz = k%n;
-
-          char tmp[50];
-          sprintf(tmp,"_%d",j);
-          G4String tmpid=(G4String) tmp;
-          solidSample[j] =
-                  new G4Tubs("SampleSolid"+tmpid,                       //its name
-                             Sample_R_in, Sample_R_out,Sample_Z/2,0,twopi);     //its size
-          logicSample[j] =
-                  new G4LogicalVolume(solidSample[j],          //its solid
-                                      Sample_mat,           //its material
-                                      "Sample"+tmpid);            //its name
-          G4RotationMatrix* rotM = new G4RotationMatrix;
-          rotM->rotateX(90.*deg);
-          new G4PVPlacement(rotM,                       //no rotation
-                            G4ThreeVector(Sample_posXpos[xx],0,-Sample_posZpos[zz]),         //at (0,0,0)
-                            "SamplePV"+tmpid,              //its name
-                            logicSample[j],                //its logical volume
-                            physSC[chamberids[i]],              //its mother  volume
-                  false,                   //no boolean operation
-                  0,                       //copy number
-                  checkOverlaps);          //overlaps checking
-
-      }
+  for (G4int j=0;j<N_SAMPLE;j++){
+      char tmp[50];
+      sprintf(tmp,"_%d",j);
+      G4String tmpid=(G4String) tmp;
+      solidSample[j] =
+              new G4Tubs("SampleSolid"+tmpid,                       //its name
+                         Sample_R_in, Sample_R_out,Sample_Z/2,0,twopi);     //its size
+              logicSample[j] =
+                      new G4LogicalVolume(solidSample[j],          //its solid
+                                          Sample_mat,           //its material
+                                          "Sample"+tmpid);            //its name
+              G4RotationMatrix* rotM = new G4RotationMatrix;
+              rotM->rotateX(90.*deg);
+              new G4PVPlacement(rotM,                       //no rotation
+                                G4ThreeVector(0,0,-Sample_posZpos[j]),         //at (0,0,0)
+                                "SamplePV"+tmpid,              //its name
+                                logicSample[j],                //its logical volume
+                                physSC[0],              //its mother  volume
+                                false,                   //no boolean operation
+                                0,                       //copy number
+                                checkOverlaps);          //overlaps checking
   }
-
-//  for (G4int j=0;j<nn;j++){
-//      G4int xx = j/n;
-//      G4int zz = j%n;
-//      //G4cout<<xx<<"\t"<<zz<<G4endl;
-//      char tmp[50];
-//      sprintf(tmp,"_%d",j);
-//      G4String tmpid=(G4String) tmp;
-//      solidSample[j] =
-//              new G4Tubs("SampleSolid"+tmpid,                       //its name
-//                         Sample_R_in, Sample_R_out,Sample_Z/2,0,twopi);     //its size
-//      logicSample[j] =
-//              new G4LogicalVolume(solidSample[j],          //its solid
-//                                  Sample_mat,           //its material
-//                                  "Sample"+tmpid);            //its name
-//      G4RotationMatrix* rotM = new G4RotationMatrix;
-//      rotM->rotateX(90.*deg);
-//              new G4PVPlacement(rotM,                       //no rotation
-//                                G4ThreeVector(Sample_posXpos[xx],0,-Sample_posZpos[zz]),         //at (0,0,0)
-//                                "SamplePV"+tmpid,              //its name
-//                                logicSample[j],                //its logical volume
-//                                physSC[0],              //its mother  volume
-//                                false,                   //no boolean operation
-//                                0,                       //copy number
-//                                checkOverlaps);          //overlaps checking
-//  }
 
   //
 
@@ -395,11 +354,8 @@ G4VPhysicalVolume* B1DetectorConstruction::Construct()
     logicBeC->SetVisAttributes(Green);
     logicBP->SetVisAttributes(Turquoise);
     logicUTar->SetVisAttributes(Red);
-    for (G4int i=0;i<N_CHAMBER;i++){
-         logicSC[i]->SetVisAttributes(Blue);
-    }
-
     for (G4int i=0;i<N_SAMPLE;i++){
+         logicSC[i]->SetVisAttributes(Blue);
          logicSample[i]->SetVisAttributes(Yellow);
     }
 

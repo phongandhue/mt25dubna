@@ -67,31 +67,19 @@ void B1SteppingAction::UserSteppingAction(const G4Step* step)
     = step->GetPreStepPoint()->GetTouchableHandle()
       ->GetVolume()->GetLogicalVolume();//prestep on Primary target
 
-  G4String volumeName= volume->GetName();
-  if (volumeName.substr(0,6) != "Sample") return;
-  G4int volumenum=atoi((volumeName.substr(7,volumeName.length()-6)).c_str());
+  // check if we are in scoring volume
+  if (volume != fScoringVolume) return;
+  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
 
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy()/keV;
-  if (step->GetTrack()->GetDefinition()->GetParticleName()=="neutron"
-          &&preE>0){
-      //G4cout<<"vol. "<<volumenum<<"- E = "<<preE<<G4endl;
+
+  if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="gamma"&&preE>0){
+      //G4cout<<"eeee"<<preE<<G4endl;
       G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,volumenum);
+      analysisManager->FillNtupleDColumn(0,0);
       analysisManager->FillNtupleDColumn(1,preE);
       analysisManager->AddNtupleRow();
   }
 
-  /*
-  // check if we are in scoring volume
-  if (volume != fScoringVolume) return;
-
-  G4double preE=step->GetPreStepPoint()->GetKineticEnergy();
-  if (step->GetPreStepPoint()->GetStepStatus()==fGeomBoundary&&step->GetTrack()->GetDefinition()->GetParticleName()=="gamma"&&preE>0){
-      G4AnalysisManager* analysisManager = G4AnalysisManager::Instance();
-      analysisManager->FillNtupleDColumn(0,0,preE);
-      analysisManager->AddNtupleRow(0);
-  }
-  */
 
   // collect energy deposited in this step
   G4double edepStep = step->GetTotalEnergyDeposit();
