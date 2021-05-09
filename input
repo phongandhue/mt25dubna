@@ -1,0 +1,18 @@
+#
+# General
+#
+projectile g
+element Cd
+mass 0
+energy 8.5 25. 0.1
+channels y
+gammax 6
+ldmodel 1
+strength 5
+widthmode 1
+preeqmode 2
+#
+# Output
+#
+fileresidual y
+components y
