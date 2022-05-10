@@ -47,7 +47,7 @@ void cal()
     grc_Ce137g_tf1->SetNpx(2000);
     grc_Ce137m_tf1->SetNpx(2000);
 
-    TFile* f=TFile::Open("flux.root");
+    TFile* f=TFile::Open("hflux_12MeV.root");
     TH1F* hflux = (TH1F*)f->Get("hflux");
     //hflux->Draw();
     Int_t nbins = hflux->GetNbinsX();
@@ -75,5 +75,9 @@ void cal()
     cout<<grProd_Ce137m_tf1->Integral(10000000,25000000,0.0001)<<endl;
     cout<<grProd_Ce137m_tf1->Integral(10000000,25000000,0.0001)/grProd_Ce137g_tf1->Integral(10000000,25000000,0.0001)<<endl;
 
+
+    for (Int_t i=0;i<grc_Ce137g->GetN();i++){
+        cout<<grc_Ce137g->GetX()[i]<<"\t"<<grflux_tf1->Eval(grc_Ce137g->GetX()[i])<<endl;
+    }
 
 }
